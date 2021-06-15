@@ -6,9 +6,13 @@ import Scanner.SingletonScanner;
 
 import Exceptions.UserAlreadyExistsException;
 
-public class RegisterCommand implements Command {
+public class RegisterCommand extends Command {
     
     private Server server = Server.getInstance();
+
+    public RegisterCommand(){
+        super(Command.type.REGISTER.name());
+    }
 
     @Override
     public ServerResponse execute() throws UserAlreadyExistsException{

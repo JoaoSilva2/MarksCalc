@@ -7,9 +7,13 @@ import Backend.ServerResponse;
 
 import Exceptions.WrongCredentialsException;
 
-public class LoginCommand implements Command{
+public class LoginCommand extends Command{
 
     private Server server = Server.getInstance();
+
+    public LoginCommand(){
+        super(Command.type.LOGIN.name());
+    }
 
     @Override
     public ServerResponse execute() throws WrongCredentialsException{
